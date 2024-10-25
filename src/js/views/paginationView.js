@@ -17,7 +17,6 @@ class PaginationView extends View {
     const numPages = Math.ceil(
       this._data.results.length / this._data.resultsPerPage
     );
-    // console.log(this._data.results.length / this._data.resultsPerPage);
     // Page 1 and there are other pages
     if (currPage === 1 && numPages > 1) {
       return `

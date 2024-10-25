@@ -95,7 +95,6 @@ export const addBookmark = function (recipe) {
 
 export const deleteBookmark = function (id) {
   const index = state.bookmarks.findIndex(el => el.id === id);
-  // console.log(index);
   state.bookmarks.splice(index, 1);
   if (id === state.recipe.id) state.recipe.bookmarked = false;
   persistBookmarks();
@@ -105,8 +104,6 @@ const init = function () {
   if (storage) state.bookmarks = JSON.parse(storage);
 };
 init();
-console.log(state.bookmarks);
-
 const clearBookmarks = function () {
   localStorage.clear('bookmarks');
 };
@@ -141,7 +138,6 @@ export const uploadRecipe = async function (newRecipe) {
       ingredients,
     };
     const data = await AJAX(`${API_URL}?key=${KEY}`, recipe);
-    // console.log(data);
     state.recipe = createRecipeObject(data);
     addBookmark(state.recipe);
   } catch (err) {
