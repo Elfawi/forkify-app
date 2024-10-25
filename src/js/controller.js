@@ -9,14 +9,6 @@ import { MODAL_CLOSE_SEC } from './config.js';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
-// const recipeContainer = document.querySelector('.recipe');
-
-if (module.hot) {
-  module.hot.accept();
-}
-
-// https://forkify-api.herokuapp.com/v2
-
 ///////////////////////////////////////
 
 const controlRecipes = async function () {
@@ -40,12 +32,6 @@ const controlRecipes = async function () {
     console.error(err);
   }
 };
-// controlRecipes();
-
-// model.loadSearchResults();
-// window.addEventListener('hashchange', showRecipe);
-// window.addEventListener('load', showRecipe);
-
 const controlSearchResults = async function () {
   try {
     // (1) Get search query
@@ -74,7 +60,6 @@ const controlServings = function (newServings) {
   // Update the recipe servings (in state)
   model.updateServings(newServings);
   // Update the recipe view
-  // recipeView.render(model.state.recipe);
   recipeView.update(model.state.recipe);
 };
 
