@@ -15,6 +15,7 @@ const controlRecipes = async function () {
   try {
     // geting the id
     const id = window.location.hash.slice(1);
+    // document.querySelector('.search-results').style.display = 'none';
     if (!id) return;
     recipeView.renderSpinner();
 
@@ -108,5 +109,9 @@ const init = () => {
   searchView.addSearchHandler(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
+  searchView.removeSearchResults();
+  if (window.screen.availWidth > 980) {
+    document.querySelector('.search-results').style.display = 'block';
+  }
 };
 init();

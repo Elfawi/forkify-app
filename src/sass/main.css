@@ -434,15 +434,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 2rem;
-  width: 2rem;
+  height: 3rem;
+  width: 3rem;
   border-radius: 10rem;
   margin-left: auto;
   margin-right: 1.75rem;
 }
 .preview__user-generated svg {
-  height: 1.2rem;
-  width: 1.2rem;
+  height: 2.2rem;
+  width: 2.2rem;
   fill: #f38e82;
 }
 

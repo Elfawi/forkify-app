@@ -4,11 +4,42 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem 0;
+    flex-direction: column;
+    height: 20rem;
+  }
 
+  &__box-1 {
+    display: flex;
+    gap: 8rem;
+    justify-content: space-between;
+    a {
+      display: block;
+    }
+    @media only screen and (max-width: $bp-medium) {
+      justify-content: space-between;
+      align-items: center;
+    }
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+  &__box-2 {
+    // display: flex;
+    @media only screen and (max-width: $bp-small) {
+      padding-top: 2rem;
+    }
+  }
   &__logo {
     margin-left: 4rem;
     height: 4.6rem;
     display: block;
+    @media only screen and (max-width: $bp-small) {
+      margin-left: 2rem;
+      height: 3.6rem;
+    }
   }
 }
 
@@ -59,11 +90,17 @@
 .nav {
   align-self: stretch;
   margin-right: 2.5rem;
+  @media only screen and (max-width: $bp-medium) {
+    align-self: center;
+  }
 
   &__list {
     list-style: none;
     display: flex;
     height: 100%;
+    @media only screen and (max-width: $bp-medium) {
+      gap: 8rem;
+    }
   }
 
   &__item {

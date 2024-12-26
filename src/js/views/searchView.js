@@ -1,5 +1,5 @@
 import View from './view.js';
-
+const searchContainer = document.querySelector('.search-results');
 class SearchView extends View {
   #parentEl = document.querySelector('.search');
   // searchQuery = document.querySelector('.search__field');
@@ -17,7 +17,15 @@ class SearchView extends View {
   addSearchHandler(handler) {
     this.#parentEl.addEventListener('submit', function (e) {
       e.preventDefault();
+      searchContainer.style.display = 'block';
       handler();
+    });
+  }
+  removeSearchResults() {
+    window.addEventListener('hashchange', () => {
+      if (window.screen.availWidth < 980) {
+        searchContainer.style.display = 'none';
+      }
     });
   }
 }
